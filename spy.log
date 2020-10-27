@@ -1,0 +1,2 @@
+1602132685429|10|statement|connection 0|url jdbc:p6spy:mysql://127.0.0.1:3306/mp-test|SELECT  id,name  FROM tb_one|SELECT  id,name  FROM tb_one
+1602132685465|0|statement|connection 0|url jdbc:p6spy:mysql://127.0.0.1:3306/mp-test|select * from tb_one|select * from tb_one
