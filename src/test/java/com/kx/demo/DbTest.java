@@ -1,6 +1,7 @@
 package com.kx.demo;
 
 import com.kx.demo.tt.dao.OneMapper;
+import com.kx.demo.tt.dao.TwoMapper;
 import com.kx.demo.tt.pojo.One;
 import com.kx.demo.tt.service.IOneService;
 import com.kx.demo.tt.service.impl.OneServiceImpl;
@@ -29,6 +30,9 @@ public class DbTest {
     @Autowired
     private IOneService oneService;
 
+    @Autowired
+    private TwoMapper twoMapper;
+
     @Test
     public void tt() {
 
@@ -51,11 +55,15 @@ public class DbTest {
                 .collect(Collectors.toList());
 
 //        int insert = oneMapper.insert();
-//        boolean b = oneService.saveBatch(collect);
-
+        boolean b = oneService.saveBatch(collect);
+//
 //        oneService.save(new One());
 
-        oneMapper.selectData();
+        oneMapper.insert(new One().setName("99861"));
+
+        System.out.println(oneMapper.selectData());
+
+        System.out.println(twoMapper.select());
 
         System.out.println();
 

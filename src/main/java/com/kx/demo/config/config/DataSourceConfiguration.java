@@ -15,7 +15,6 @@ import javax.sql.DataSource;
 
 
 /**
- *
  * @author kx
  */
 @Configuration
@@ -23,10 +22,7 @@ import javax.sql.DataSource;
 public class DataSourceConfiguration {
 
 
-    @Value("${spring.datasource.loginUsername}")
-    private String loginUsername;
-    @Value("${spring.datasource.loginPassword}")
-    private String loginPassword;
+
 
     @Bean
     public ServletRegistrationBean druidServlet() {
@@ -37,8 +33,8 @@ public class DataSourceConfiguration {
         // IP黑名单(共同存在时，deny优先于allow)
         servletRegistrationBean.addInitParameter("deny", "");
         //控制台管理用户
-        servletRegistrationBean.addInitParameter("loginUsername", loginUsername);
-        servletRegistrationBean.addInitParameter("loginPassword", loginPassword);
+        servletRegistrationBean.addInitParameter("loginUsername", "admin");
+        servletRegistrationBean.addInitParameter("loginPassword", "admin");
         //是否能够重置数据 禁用HTML页面上的“Reset All”功能
         servletRegistrationBean.addInitParameter("resetEnable", "false");
         return servletRegistrationBean;
@@ -52,10 +48,24 @@ public class DataSourceConfiguration {
         return filterRegistrationBean;
     }
 
-    @Bean(name = "dataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource dataSource() {
-        return new DruidDataSource();
-    }
+
+//    @Bean(name = "db1")
+//    @ConfigurationProperties(prefix = "spring.datasource.dynamic.primary.datasource.master")
+//    public DataSource db1() {
+//        return new DruidDataSource();
+//    }
+//
+//    @Bean(name = "db2")
+//    @ConfigurationProperties(prefix = "spring.datasource.dynamic.primary.datasource.slave")
+//    public DataSource db2() {
+//        return new DruidDataSource();
+//    }
+
+
+//    @Bean(name = "dataSource")
+//    @ConfigurationProperties(prefix = "spring.datasource")
+//    public DataSource dataSource() {
+//        return new DruidDataSource();
+//    }
 
 }

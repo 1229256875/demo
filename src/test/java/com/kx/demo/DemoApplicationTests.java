@@ -46,15 +46,19 @@ class DemoApplicationTests {
 
         //数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/mp-test")//地址
-                .setDriverName("com.mysql.cj.jdbc.Driver")//数据驱动
-                .setUsername("root")//账户
+        dsc
+//                .setUrl("jdbc:mysql://127.0.0.1:3306/mp-test")//地址
+//                .setDriverName("com.mysql.cj.jdbc.Driver")//数据驱动
+                .setUrl("jdbc:postgresql://192.168.0.102:5432/vulnerability")//地址
+                .setDriverName("org.postgresql.Driver")//数据驱动
+                .setUsername("postgres")//账户
                 .setPassword("192354...")//密码
-                .setDbType(DbType.MYSQL);//数据库类型
+                .setDbType(DbType.POSTGRE_SQL);//数据库类型
+
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.kx.demo.tt")//父包名
+        pc.setParent("com.kx.demo.vulnerability")//父包名
 //                .setController("")//配置controller 包名称
 //                .setService("")//配置service 服务包名称
 //                .setServiceImpl("")//配置serviceImpl 服务实现包名称

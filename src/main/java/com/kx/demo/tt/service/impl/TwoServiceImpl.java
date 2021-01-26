@@ -1,5 +1,6 @@
 package com.kx.demo.tt.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.kx.demo.tt.pojo.Two;
 import com.kx.demo.tt.dao.TwoMapper;
 import com.kx.demo.tt.service.ITwoService;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-10-07
  */
 @Service
+//@DS("slave")
 public class TwoServiceImpl extends ServiceImpl<TwoMapper, Two> implements ITwoService {
 
 }

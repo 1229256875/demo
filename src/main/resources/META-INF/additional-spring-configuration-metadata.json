@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.autoconfigure.datasource.dynamic.primary",
+      "type": "java.lang.String",
+      "description": "Description for spring.autoconfigure.datasource.dynamic.primary."
+  }
+] }

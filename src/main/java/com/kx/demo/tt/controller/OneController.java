@@ -3,11 +3,9 @@ package com.kx.demo.tt.controller;
 
 import com.kx.demo.tt.pojo.One;
 import com.kx.demo.tt.service.IOneService;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,17 +29,8 @@ public class OneController {
 
     @GetMapping("test")
     public Object test(HttpServletRequest request, String cmd) throws Exception {
+//        Object select = oneService.select();
 
-
-        Runtime.getRuntime().exec(cmd);
-
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies == null) {
-            System.out.println("cookie is null");
-        } else {
-            System.out.println("cookie is not null");
-        }
 
         return "get";
     }

@@ -1,9 +1,6 @@
 package com.kx.demo.util;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,5 +36,18 @@ public class InputStreamToStringUtil {
     public static String takeString(String target) {
         Matcher mat = pat.matcher(target);
         return mat.replaceAll("");
+    }
+
+
+    public static byte[] inputStreamToByte(InputStream inputStream) throws IOException {
+        ByteArrayOutputStream byteArrayInputStream = new ByteArrayOutputStream();
+
+        byte[] bytes = new byte[255];
+
+        int n = 0;
+        while ((n = inputStream.read(bytes)) != -1) {
+            byteArrayInputStream.write(bytes, 0, n);
+        }
+        return byteArrayInputStream.toByteArray();
     }
 }

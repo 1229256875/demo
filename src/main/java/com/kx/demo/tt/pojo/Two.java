@@ -28,7 +28,7 @@ public class Two extends Model<Two> {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String six;
+    private String name;
 
 
     @Override
